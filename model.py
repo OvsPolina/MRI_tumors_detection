@@ -191,13 +191,6 @@ def test_model(model, test_loader, criterion, device='cpu'):
             outputs = model(inputs)
             loss = criterion(outputs, labels)
             test_loss += loss.item() * inputs.size(0)
-
-            '''_, predicted = torch.max(outputs, 1)
-            total += labels.size(0)
-            correct += (predicted == labels).sum().item()
-
-    test_loss = test_loss / len(test_loader.dataset)
-    test_accuracy = correct / total'''
             
             # Вычисляем IoU для каждой пары масок
             batch_iou = 0.0
