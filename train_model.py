@@ -98,7 +98,7 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, num_epoch
 
     torch.save(model.state_dict(), const.model_out)
 
-    history = {'train_loss': train_loss_history, 'val_loss': val_loss_history}
+     history = {'train_loss': train_loss_history, 'val_loss': val_loss_history, 'train_acc': train_acc_history, 'val_acc': val_acc_history}
     plot_accuracy_and_loss(history)
 
     print('Training complete')
